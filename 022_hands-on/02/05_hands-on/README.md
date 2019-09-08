@@ -22,4 +22,4 @@ When your "ln" line of text is equal to an empty string, break out of the loop.
 
 Run your code and go to localhost:8080 in **your browser.**
 
-What do you find?
+What do you find? Ran 3 times? And that the request ends with a blank line

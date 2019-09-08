@@ -1,3 +1,24 @@
+{{define "year"}}
+    <h2>{{.AcaYear}}</h2>
+    {{if .Fall}}
+        {{template "semester" .Fall}}
+    {{end}}
+    {{if .Spring}}
+        {{template "semester" .Spring}}
+    {{end}}
+    {{if and .Summer .Summer.Term}}
+        {{template "semester" .Summer}}
+    {{end}}
+{{end}}
+{{define "semester"}}
+    <h3>{{.Term}}</h3>
+    {{range .Courses}}
+        {{template "course" .}}
+    {{end}}
+{{end}}
+{{define "course"}}
+    {{.Number}}: {{.Name}} ({{.Units}})
+{{end}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +26,8 @@
     <title>Document</title>
 </head>
 <body>
-
 {{range .}}
-
-<!-- PUT YOUR CODE HERE TO SHOW THE DATA-->
-
+    {{template "year" .}}
 {{end}}
-
 </body>
 </html>

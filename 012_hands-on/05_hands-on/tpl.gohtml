@@ -1,0 +1,26 @@
+{{define "menu"}}
+    {{range .}}
+        <h2>{{.Name}}</h2>
+        {{range .Items}}
+            {{template "item" .}}
+        {{end}}
+    {{end}}
+{{end}}
+{{define "item"}}
+    <h4>{{.Name}} (${{.Price}})</h4a>
+    {{.Description}}
+{{end}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Returant Menus</title>
+</head>
+<body>
+    {{range .}}
+        <h1>{{.Name}}</h1>
+        {{template "menu" .Menu}}
+    {{end}}
+</body>
+</html>

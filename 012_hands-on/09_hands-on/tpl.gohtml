@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablurised Data</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+        {{range .Header}}
+            <th>
+                {{.}}
+            </th>
+        {{end}}
+        </tr>
+    </thead>
+    <tbody>
+    {{range .Rows}}
+        <tr>
+        {{range .}}
+            <td>
+                {{.}}
+            </td>
+        {{end}}
+        </tr>
+    {{end}}
+    </tbody>
+</table>
+</body>
+</html>
